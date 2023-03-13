@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TopicContext } from "./Topic";
+import { TopicContext } from "../topic/Topic";
 
 function Question() {
   const selectedTopic = useContext(TopicContext);

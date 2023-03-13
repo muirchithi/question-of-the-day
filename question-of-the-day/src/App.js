@@ -1,15 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import Question from './components/Question';
-import Topic from './components/Topic';
-import VoteBar from './components/VoteBar';
-import QuestionTimer from './components/QuestionTimer';
+import Question from './components/question/Question';
+import Topic from './components/topic/Topic';
+import VoteBar from './components/voteBar/VoteBar';
+import QuestionTimer from './components/questionTimer/QuestionTimer';
 
 function App() {
+
+  const tomorrowsDate = new Date().toLocaleString()
+
+
+  
+    const current = new Date();
+    const date = `${current.getMonth()+1}/${current.getDate()+1}/${current.getFullYear()}`;
+  
+   
   return (
     
     <div className="App">
       <header className="App-header">
+      <QuestionTimer countdownTo={date} />
       <Topic>
           <Question />
         </Topic>
@@ -23,10 +33,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React {date}
         </a>
-        <QuestionTimer />
-       
         <VoteBar />
       </header>
     </div>

@@ -1,9 +1,10 @@
 import React, { useState, createContext } from "react";
+import "./Topic.css";
 
 const TopicContext = createContext("");
 
 function Topic(props) {
-  const [selectedTopic, setSelectedTopic] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState("No topic selected");
 
   const handleTopicChange = (e) => {
     setSelectedTopic(e.target.value);
@@ -12,7 +13,9 @@ function Topic(props) {
   return (
     <TopicContext.Provider value={selectedTopic}>
       <div>
+        <div className="current-topic">
         <p>Current topic: {selectedTopic}</p>
+        </div>
         <label htmlFor="options">Select a topic:</label>
         <select id="topics" value={selectedTopic} onChange={handleTopicChange}>
           <option value="Fruits">Fruits</option>

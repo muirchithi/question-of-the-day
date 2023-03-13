@@ -1,0 +1,17 @@
+.votebar-container-left {
+  height: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.votebar-container-right {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.votebar {
+  height: 100%;
+  background-color: blue;
+  transition: width 0.5s ease-in-out;
+}
